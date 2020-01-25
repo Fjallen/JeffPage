@@ -18,7 +18,7 @@ const Heading = ({ mobile }) => (
         />
         <Header
             as='h2'
-            content='Software Engineering, Full-Stack Development, Data Science'
+            content='Software Engineering, Full Stack, Data Science'
             inverted
             style={{
             fontSize: mobile ? '1.5em' : '1.7em',

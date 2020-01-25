@@ -3,11 +3,12 @@ import React, { Component } from 'react'
 import {  Container,Grid, Header,
   Icon,Image,Menu,Responsive, Divider,
   Segment, Sidebar,Visibility } from 'semantic-ui-react'
-import HomepageHeading from './Components/Heading'
-import Footer from './Components/Footer'
+import HomepageHeading from './components/Heading'
+import Footer from './components/Footer'
 import './App.css'
 
 const getWidth = () => {
+  //Serverside rendering
   const isSSR = typeof window === 'undefined'
 
   return isSSR ? Responsive.onlyTablet.minWidth : window.innerWidth
@@ -193,8 +194,7 @@ ResponsiveContainer.propTypes = {
 
 const HomepageLayout = () => (
   <ResponsiveContainer>
-  <Segment style={{ padding: '5em 0em' }} vertical>
-    <div id="Projects">
+  <Segment id="Projects" style={{ padding: '5em 0em' }} vertical>
       <Grid container stackable verticalAlign='middle'>
         <Grid.Row>
         <Grid.Column width={8}>
@@ -208,13 +208,13 @@ const HomepageLayout = () => (
             I also developed custom software to manage digital displays in the storefront using a Raspberry Pi Cluster.
             </p>
         </Grid.Column>
-        <Grid.Column floated='right' width={6}>
+        <Grid.Column textAlign='center' floated='right' width={6}>
             <Image id="zoom" bordered rounded size='medium' src="/app.png" />
         </Grid.Column>
         </Grid.Row>
       </Grid>
       <Divider className="divider"></Divider>
-      <Grid container stackable verticalAlign='middle'>
+      <Grid id="grid-cell" container stackable verticalAlign='middle'>
         <Grid.Row>
         <Grid.Column floated='left' width={7}>
             <Image id="zoom" bordered rounded size='huge' src="/AlitheiaTechSnapshot.png" />
@@ -250,11 +250,10 @@ const HomepageLayout = () => (
             </p>
         </Grid.Column>
         <Grid.Column floated='right' width={7}>
-            <Image id="zoom" bordered rounded size='large' src="/gamealytics.png" />
+            <Image id="zoom" bordered rounded size='large' src="https://api.modeland.io/image/e4bb702396c74d98986c5d5bf49f5685" />
         </Grid.Column>
         </Grid.Row>
       </Grid>
-    </div>
   </Segment>
   <Segment id="Testimonials" style={{ padding: '5em 0em' }} vertical>
       <Grid container stackable>
