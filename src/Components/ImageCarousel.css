@@ -1,0 +1,38 @@
+.buttonBack {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+.buttonNext {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+}
+
+.carousel-container {
+  position: relative;
+  object-fit: contain;
+  margin: auto;
+  width: 600px;
+  overflow: hidden;
+}
+
+.imageButton {
+  background-color: transparent;
+  border: none;
+  height: 80%;
+  width: 15%;
+  outline: none;
+  color: #B0B0B0;
+  transition: opacity .25s ease
+}
+.imageButton:hover {
+  color: white;
+}
+.button-icon {
+  font-size: 4em;
+}
+

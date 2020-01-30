@@ -6,6 +6,8 @@ import {  Container,Grid, Header,
 import HomepageHeading from './components/Heading'
 import Footer from './components/Footer'
 import './App.css'
+//Custom Components
+import ImageCarousel from './components/ImageCarousel';
 
 const getWidth = () => {
   //Serverside rendering
@@ -169,7 +171,6 @@ class MobileContainer extends Component {
             </Container>
             <HomepageHeading mobile />
           </Segment>
-
           {children}
         </Sidebar.Pusher>
       </Responsive>
@@ -191,7 +192,7 @@ const ResponsiveContainer = ({ children }) => (
 ResponsiveContainer.propTypes = {
   children: PropTypes.node,
 }
-
+const images = ["https://api.modeland.io/image/5e6b3ed8e0c142e18eba8c96f0a339a9","https://api.modeland.io/image/164e29c949af437893b2e7c53f4a1b3c","https://api.modeland.io/image/6a3d17ec7ab94757b4d2bdd06374fc44"]
 const HomepageLayout = () => (
   <ResponsiveContainer>
   <Segment id="Projects" style={{ padding: '5em 0em' }} vertical>
@@ -244,13 +245,34 @@ const HomepageLayout = () => (
             </p>
             <p style={{ fontSize: '1.33em' }}>
             I developed the Flask backend server, which comprised of a web scraper, and a logarithmic regressor. I also taught the other members of the group the foundations of React and allowed them to experience front-end development with React. I also integrated Firebase to store user's current performance as a cache.
-            </p>
+            </p>  
             <p style={{ fontSize: '1.33em' }}>
             The Code can be found <a href="https://github.com/Fjallen/GitGudGamers">Here</a>
             </p>
         </Grid.Column>
         <Grid.Column floated='right' width={7}>
             <Image id="zoom" bordered rounded size='large' src="https://api.modeland.io/image/e4bb702396c74d98986c5d5bf49f5685" />
+        </Grid.Column>
+        </Grid.Row>
+      </Grid>
+      <Divider className="divider"></Divider>
+      <Grid container stackable verticalAlign='middle'>
+        <Grid.Row>
+        <Grid.Column width={5} floated='left'>
+        <ImageCarousel
+          images={images}
+        />
+        </Grid.Column>
+        <Grid.Column width={7} floated='right'>
+            <Header as='h3' style={{ fontSize: '2em' }}>
+              Presentr
+            </Header>
+            <p style={{ fontSize: '1.33em' }}>
+              Presentr was a VR application developed by me for people to practice presenting. It was built in Unity with features like realtime speech analysis, audience feedback and slide deck loading.
+            </p>
+            <p style={{ fontSize: '1.33em' }}>
+              It was pitched by me at competitions, to the business education department at Western University and to potential investors.
+            </p>
         </Grid.Column>
         </Grid.Row>
       </Grid>
